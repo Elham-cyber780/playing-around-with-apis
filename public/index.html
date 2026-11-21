@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Book Finder</h1>
+    <p>Find study books fast. Search, filter and sort results from Google Books.</p>
+  </header>
+
+  <main>
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search by title, author or topic..." required>
+      <button type="submit">Search</button>
+    </form>
+
+    <section id="controls" hidden>
+      <label>
+        Sort by
+        <select id="sort-select">
+          <option value="relevance">Relevance</option>
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="title">Title (A-Z)</option>
+          <option value="pages">Most pages</option>
+        </select>
+      </label>
+
+      <label>
+        Category
+        <select id="category-select">
+          <option value="all">All categories</option>
+        </select>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" id="preview-only">
+        Preview available only
+      </label>
+    </section>
+
+    <p id="message"></p>
+    <section id="results"></section>
+  </main>
+
+  <footer>
+    <p>Book data provided by the <a href="https://developers.google.com/books" target="_blank">Google Books API</a>.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
