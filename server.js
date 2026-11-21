@@ -1,13 +1,20 @@
 require('dotenv').config();
 const express = require('express');
+const os = require('os');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const SERVER_NAME = os.hostname();
+
+app.use((req, res, next) => {
+  res.setHeader('X-Served-By', SERVER_NAME);
+  next();
+});
 
 app.use(express.static('public'));
 
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' });
+  res.json({ status: 'ok', server: SERVER_NAME });
 });
 
 app.get('/api/books', async (req, res) => {
@@ -52,5 +59,5 @@ app.get('/api/books', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Book Finder running on http://localhost:${PORT}`);
+  console.log(`Book Finder running on http://localhost:${PORT} (server: ${SERVER_NAME})`);
 });
