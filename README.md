@@ -1,12 +1,10 @@
- 
-
 
 # Book Finder
 
 A web application that helps students find study books quickly. Users search Google Books by title, author or topic, then **sort**, **filter** and browse the results in a clean card layout.
 
 **Live app (via load balancer):** https://www.elhamcodes.tech
-**Demo video:** _add your video link here_
+**Demo video:** https://youtu.be/YmiUOOSm74k
 
 
 
